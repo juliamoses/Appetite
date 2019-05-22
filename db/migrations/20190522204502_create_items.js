@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
     .unsigned()
     .index(); 
     table.text('name');
-    table.decimal('price', 2);
+    table.integer('price');
   });
 };
 
