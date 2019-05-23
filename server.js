@@ -17,7 +17,7 @@ const knexLogger  = require('knex-logger');
 
 // Seperated Routes for each Resource
 const usersRoutes = require("./routes/users");
-
+const itemRoutes = require("./routes/items");
 
 /////////APP.USE///////////////////////////
 
@@ -42,7 +42,7 @@ app.use(express.static("public"));
 
 // Mount all resource routes
 app.use("/api/users", usersRoutes(knex));
-app.use("/api/items", usersRoutes(knex));
+app.use("/api/items", itemRoutes(knex));
 // Mount middleware to notify Twilio of errors- do i need?
 //app.use(twilioNotifications.notifyOnError);
 
