@@ -1,0 +1,70 @@
+/* VARIABLES & MIXINS
+    | ==================================================================================== */
+nav.navbar {
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+  background-color: #212a49;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1.2rem 6rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav.navbar .nav-links {
+  margin-left: 20rem;
+}
+
+nav.navbar .logo {
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+nav.navbar a {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  padding: 0 0;
+}
+
+nav.navbar a:hover {
+  border-bottom: 2px solid #21e7b6;
+}
+
+nav.navbar .checkout-btn {
+  padding: 1em 2rem;
+}
+
+nav.navbar .checkout-btn:hover {
+  border: none;
+}
+
+nav.navbar .checkout-btn:focus {
+  outline: none;
+}
+
+.shopping-cart {
+  position: relative;
+}
+
+.shopping-cart .fa-shopping-cart {
+  font-size: 2.8rem;
+  color: #fff;
+  margin-left: 0;
+}
+
+.shopping-cart .counter {
+  position: absolute;
+  top: 30%;
+  left: 60%;
+  color: #fff;
+  background-color: #21e7b6;
+  border-radius: 50rem;
+  padding: 0.2rem 0.6rem;
+}
+/*# sourceMappingURL=nav.css.map */
