@@ -9,22 +9,3 @@ $(() => {
   // });;
 });
 
-
-
-const addCart = () => {
-  $('form').on('click', function(event) {
-    event.preventDefault()
-  
-
-      //on click of add to cart, populates
-      $.ajax({
-        type: 'POST',
-        url: '/checkout',
-        data: $(this).serialize(),
-      }).done(function() {
-		  $('texadd-cart');
-		  checkout();
-      })
-    }
-  })
-}
