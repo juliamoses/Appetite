@@ -43,7 +43,7 @@ app.use(express.static("public"));
 
 // Mount all resource routes
 app.use("/api/users", usersRoutes(knex));
-
+app.use("/api/items", usersRoutes(knex));
 // Mount middleware to notify Twilio of errors- do i need?
 //app.use(twilioNotifications.notifyOnError);
 
