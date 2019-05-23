@@ -1,3 +1,4 @@
+// get request to database
 $(() => {
   // $.ajax({
   //   method: "GET",
