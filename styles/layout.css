@@ -1,0 +1,97 @@
+/* VARIABLES & MIXINS
+    | ==================================================================================== */
+body {
+  background-color: #EEE;
+  font-family: "Montserrat", sans-serif !important;
+  color: #fff;
+}
+
+body .btn {
+  outline: none;
+  border: none;
+  border-radius: 5rem;
+  background-color: #0cd1a0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+body .btn:hover {
+  background-color: #129c90;
+}
+
+#hero {
+  width: 100%;
+  height: 40rem;
+  background: url(../images/hero-bg.jpeg);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+#hero .hero-content {
+  padding: 12rem 5rem;
+  background: none;
+  width: 40%;
+}
+
+#hero .hero-header {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 4.5rem;
+  margin-bottom: 2rem;
+  line-height: 5rem;
+}
+
+#hero p {
+  color: #fff;
+}
+
+#hero .btn {
+  margin-top: 1rem;
+  width: 10rem;
+  padding: 1rem 0rem;
+}
+
+#orders {
+  padding: 2rem 10rem;
+}
+
+#orders .order-headers {
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+}
+
+#orders .prices {
+  font-size: 2rem;
+  color: #212a49;
+}
+
+#orders p {
+  color: gray;
+}
+
+#orders .btn {
+  width: 80%;
+}
+
+#order-hero {
+  width: 100%;
+  height: 20rem;
+  background: url(../images/order-header.jpeg);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+#order-hero h1 {
+  font-size: 3.5rem;
+}
+
+#order-hero .hero-content {
+  width: 20%;
+  padding: 10rem 10rem;
+  background: none;
+}
+/*# sourceMappingURL=layout.css.map */
