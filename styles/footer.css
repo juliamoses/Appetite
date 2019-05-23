@@ -1,0 +1,14 @@
+/* VARIABLES & MIXINS
+    | ==================================================================================== */
+footer {
+  background-color: #212a49;
+  color: #fff;
+  text-align: center;
+  margin-top: 4rem;
+  height: 5rem;
+}
+
+footer p {
+  padding-top: 2rem;
+}
+/*# sourceMappingURL=footer.css.map */

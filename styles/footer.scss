@@ -1,0 +1,19 @@
+/* VARIABLES & MIXINS
+    | ==================================================================================== */
+    $primary-color: #212a49;
+    $secondary-color: #0cd1a0;
+    $white-text: #fff;
+    $body-font: rgb(128, 128, 128);
+
+    
+footer {
+  background-color: $primary-color;
+  color: $white-text;
+  text-align: center;
+  margin-top: 4rem;
+  height: 5rem;
+
+  p {
+    padding-top: 2rem;
+  }
+}

@@ -1,0 +1,68 @@
+/* VARIABLES & MIXINS
+    | ==================================================================================== */
+
+
+$primary-color: #212a49;
+$secondary-color: #21e7b6;
+$white-text: #fff;
+
+    // //MIXINS
+    // @mixin flex-align {
+    //   display: flex; 
+    //   align-items: center;
+    // }
+
+nav.navbar {
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+  background-color: $primary-color;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem 6rem;
+  font-family: 'Montserrat', sans-serif;
+  
+  .nav-links {
+    margin-left: 20rem;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    color: $white-text;
+  }
+  a {
+    color: $white-text;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    padding: 0 0;
+  }
+
+  a:hover {
+    border-bottom: 2px solid #21e7b6;
+  }
+  .login-btn {
+    width: 8rem;
+  }
+}
+
+.shopping-cart{
+  position: relative;
+  
+  .fa-shopping-cart {
+    font-size: 2.8rem;
+    color: $white-text;
+    margin-left: 0;
+  }
+  .counter {
+    position: absolute;
+    top: 30%;
+    left: 60%;
+
+    color: $white-text;
+    background-color: $secondary-color;
+    border-radius: 50rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
+}

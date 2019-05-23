@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Home Page</title>
+    <title>Food App - Best food ordering app ever</title>
+    <% include partials/_links %>
 
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
 
   <body>
-    <h1>MENU</h1>
+
+    <% include partials/_header %>
+    <section id="hero">
+      <div class="jumbotron hero-content">
+        <h1 class="hero-header">Best Food <br>App Ever</h1>
+        <p class="lead">Order from your favourite restaurants in no time with Food App. </p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" role="button">Order Now</a>
+        </p>
+      </div>
+    </section>
+    <% include partials/_footer %>
   </body>
 </html>

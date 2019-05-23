@@ -1,7 +1,105 @@
+/* VARIABLES & MIXINS
+    | ==================================================================================== */
+    $primary-color: #212a49;
+    $secondary-color: #0cd1a0;
+    $white-text: #fff;
+    $body-font: rgb(128, 128, 128);
+
 body {
   background-color: #EEE;
+  font-family: 'Montserrat', sans-serif!important;
+  color: $white-text;
 
-  h1 {
-    color: #244751;
+  .btn {
+    outline: none;
+    border: none;
+    border-radius: 5rem;
+    background-color: $secondary-color;
+    font-size: 0.8rem;
+    text-transform: uppercase;
   }
+
+  .btn:hover {
+    background-color: #129c90;;
+
+  }
+}
+
+#hero {
+  width: 100%;
+  height: 40rem;
+  background: 
+  url(../images/hero-bg.jpeg);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  color: $white-text;
+
+  .hero-content {
+    padding: 12rem 5rem;
+    background: none;
+    width: 40%;
+  }
+  
+  .hero-header {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+    line-height: 5rem;
+  }
+  p {
+    color: $white-text;
+  }
+
+  .btn {
+    margin-top: 1rem;
+    width: 10rem;
+    padding: 1rem 0rem;
+  }
+}
+
+#orders {
+  padding: 2rem 10rem;
+
+  .order-headers {
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+  }
+  
+  .prices {
+    font-size: 2rem;
+    color: #212a49;
+  }
+
+  p {
+    color: $body-font;
+  }
+  
+  .btn {
+    width: 80%;
+  }
+  
+}
+
+
+#order-hero {
+  h1{
+    font-size: 3.5rem;
+  }
+  width: 100%;
+  height: 20rem;
+  background: 
+  url(../images/order-header.jpeg);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  color: $white-text;
+  
+  .hero-content {
+    width: 20%;
+    padding: 10rem 10rem;
+    background: none;
+  }
+  
 }
