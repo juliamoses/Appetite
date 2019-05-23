@@ -25,20 +25,23 @@ itemsData();
 
 
 const addCart = () => {
-  $('form').on('click', function(event) {
-    event.preventDefault()
-  
+  // $('form').on('click', function(event) {
+    // event.preventDefault()
+    let item = {name: 'apple'}
+    localStorage.setItem('order', JSON.stringify(item))
+    
 
       //on click of add to cart, populates
-      $.ajax({
-        type: 'POST',
-        url: '/api/items',
-        data: $(this).serialize(),
-      }).done(function() {
-      $('items');
-		  checkout();
-      })
-    })
-  }
-  console.log("items", items);
+    //   $.ajax({
+    //     type: 'POST',
+    //     url: '/api/items',
+    //     data: $(this).serialize(),
+    //   }).done(function() {
+    //   $('items');
+		//   checkout();
+    //   })
+    // })
+  // })
+}
+  // console.log("items", items);
 addCart();
