@@ -18,7 +18,10 @@ const knexLogger  = require('knex-logger');
 // Seperated Routes for each Resource
 const usersRoutes = require("./routes/users");
 
+
+
 /////////APP.USE///////////////////////////
+
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
 //         The :status token will be colored red for server error codes,
@@ -41,10 +44,13 @@ app.use(express.static("public"));
 // Mount all resource routes
 app.use("/api/users", usersRoutes(knex));
 
+// Mount middleware to notify Twilio of errors- do i need?
+//app.use(twilioNotifications.notifyOnError);
+
 
 /////////HELPER FUNCTIONS//////////////////
-
-
+//helper function for twillo text
+//users must provide email(twillo auth)
 
 /////////GET REQUESTS/////////////////////(most to least specific)
 
@@ -70,6 +76,11 @@ app.post("/order/update", (req, res) => {
 
 //twillo(read up on)
 app.post("twillo/send",(req, res) => {
+  if (!isConfigured) {
+  var errorMessage =
+    'TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, and TWILIO_NUMBER must be set.';
+  throw new Error(errorMessage);
+  }
   res.send("orders here!");
 });
 
