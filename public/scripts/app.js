@@ -19,11 +19,13 @@ const addCart = () => {
       //on click of add to cart, populates
       $.ajax({
         type: 'POST',
-        url: '/checkout',
+        url: '/api/items',
         data: $(this).serialize(),
       }).done(function() {
-		  $('menu');
+      $('items');
 		  checkout();
       })
-    }
-  })
+    })
+  }
+  console.log("items", items);
+addCart();
