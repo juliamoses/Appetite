@@ -22,3 +22,23 @@ const itemsData = () => $.ajax({
 
 itemsData();
 
+
+
+const addCart = () => {
+  $('form').on('click', function(event) {
+    event.preventDefault()
+  
+
+      //on click of add to cart, populates
+      $.ajax({
+        type: 'POST',
+        url: '/api/items',
+        data: $(this).serialize(),
+      }).done(function() {
+      $('items');
+		  checkout();
+      })
+    })
+  }
+  console.log("items", items);
+addCart();
