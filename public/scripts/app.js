@@ -21,7 +21,7 @@ const itemsData = () => $.ajax({
 })
 itemsData();
 
-
+// yo yo
 
 // const addCart = () => {
 //   $('form').on('click', function(event) {
