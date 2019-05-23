@@ -65,6 +65,11 @@ app.get("/order", (req, res) => {
   res.render("order");
 });
 
+//get for checkout
+app.get("/checkout", (req,res) => {
+  res.render("checkout");
+})
+
 
 /////////POST REQUESTS/////////////////////(most to least specific)
 
