@@ -7,12 +7,15 @@ body {
 }
 
 body .btn {
-  outline: none;
   border: none;
   border-radius: 5rem;
   background-color: #0cd1a0;
   font-size: 0.8rem;
   text-transform: uppercase;
+}
+
+body .btn:focus {
+  outline: none;
 }
 
 body .btn:hover {
@@ -93,5 +96,21 @@ body .btn:hover {
   width: 20%;
   padding: 10rem 10rem;
   background: none;
+}
+
+/* CHECKOUT TABLE
+    | ==================================================================================== */
+#checkout {
+  padding: 10rem 15rem;
+}
+
+#checkout h2 {
+  margin-bottom: 2rem;
+}
+
+.img-wrap {
+  width: 10%;
+  height: 10%;
+  border-radius: 10rem;
 }
 /*# sourceMappingURL=layout.css.map */
