@@ -11,7 +11,7 @@
 //   });;
 // });
 
-
+$(() => {
 const itemsData = () => $.ajax({
 	type: 'GET',
 	url: '/api/items',
@@ -19,26 +19,26 @@ const itemsData = () => $.ajax({
 }).done(function (response) {
   console.log("response: ", response);
 })
-
 itemsData();
 
 
 
-const addCart = () => {
-  $('form').on('click', function(event) {
-    event.preventDefault()
+// const addCart = () => {
+//   $('form').on('click', function(event) {
+//     event.preventDefault()
   
 
-      //on click of add to cart, populates
-      $.ajax({
-        type: 'POST',
-        url: '/api/items',
-        data: $(this).serialize(),
-      }).done(function() {
-      $('items');
-		  checkout();
-      })
-    })
-  }
-  console.log("items", items);
-addCart();
+//       //on click of add to cart, populates
+//       $.ajax({
+//         type: 'POST',
+//         url: '/api/items',
+//         data: $(this).serialize(),
+//       }).done(function() {
+//       $('items');
+// 		  checkout();
+//       })
+//     })
+//   }
+//   // console.log("items", items);
+// addCart();
+});
