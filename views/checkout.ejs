@@ -19,6 +19,20 @@
           <div class="checkout-row1"></div>
         </div>
     </section>
+
+    <section id="checkout-frm">
+        <form class="twillio-frm" method="POST">
+            <div class="row">
+              <div class="col">
+                <input type="text" name="name" class="form-control" placeholder="First name">
+              </div>
+              <div class="col">
+                <input class="form-control" name="phone-number" type="tel" value="1-(647)-555-5555" id="example-tel-input">
+              </div>
+              <button type="submit" class="btn btn-primary">Order</button>
+            </div>
+          </form>
+    </section>
     <% include partials/_footer %>
   </body>
 </html>
