@@ -14,6 +14,9 @@ const knexConfig  = require("./knexfile");
 const knex        = require("knex")(knexConfig[ENV]);
 const morgan      = require('morgan');
 const knexLogger  = require('knex-logger');
+const MessagingResponse = require('twilio').twiml.MessagingResponse;
+const http = require('http');
+
 
 // Seperated Routes for each Resource
 const usersRoutes = require("./routes/users");
@@ -79,16 +82,27 @@ app.post("/order/update", (req, res) => {
 
 
 //twillo(read up on)
-app.post("twillo/send",(req, res) => {
-  if (!isConfigured) {
-  var errorMessage =
-    'TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, and TWILIO_NUMBER must be set.';
-  throw new Error(errorMessage);
-  }
-  res.send("orders here!");
-});
-
+// app.post("twillo/send",(req, res) => {
+//   if (!isConfigured) {
+//   var errorMessage =
+//     'TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, and TWILIO_NUMBER must be set.';
+//   throw new Error(errorMessage);
+//   }
+//   res.send("orders here!");
+// });
+app.post('/sms', (req, res) => {
+    const twiml = new MessagingResponse();
+  
+    twiml.message('The Robots are coming! Head for the hills!');
+  
+    res.writeHead(200, {'Content-Type': 'text/xml'});
+    res.end(twiml.toString());
+  });
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
 });
+
+
+
+
