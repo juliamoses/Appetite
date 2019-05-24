@@ -65,17 +65,21 @@ body {
 
 #orders {
   padding: 2rem 10rem;
-
+  
   .order-headers {
     margin-bottom: 2rem;
     margin-top: 4rem;
   }
   
   .prices {
-    font-size: 2rem;
+    font-size: 1.2rem;
     color: #212a49;
   }
-
+  h5 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
   p {
     color: $body-font;
   }
@@ -84,6 +88,9 @@ body {
     width: 80%;
   }
   
+  .card-body {
+    text-align: center;
+  }
 }
 
 
@@ -105,12 +112,13 @@ body {
     padding: 10rem 10rem;
     background: none;
   }
+
   
 }
 
 
 /* CHECKOUT TABLE
-    | ==================================================================================== */
+| ==================================================================================== */
 
 #checkout {
       padding: 10rem 15rem;
