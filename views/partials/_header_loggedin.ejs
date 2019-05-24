@@ -1,0 +1,18 @@
+<div class="user-info">
+  <p class="username""><span class="log-msg">Logged in as:</span> <%= user.email %> | <a class="logout" href="/login">Logout</a>
+  </p>
+</div>
+<nav class="navbar">
+  <h1 class="logo">Food App</h1>
+  <div class="nav-links"></div>
+  <a class="nav-link active" href="/">Home</a>
+  <a class="nav-link" href="/order">Order</a>
+  <div class="shopping-cart">
+    <a href="/checkout">
+      
+      <span class="counter">0</span>
+      <i class="fas fa-shopping-cart"></i>
+      
+    </div></a>
+    <a class="btn btn-primary btn-lg checkout-btn" href="/checkout" role="button">Checkout</a>
+  </nav>

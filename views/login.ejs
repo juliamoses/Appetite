@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login</title>
+  <% include partials/_links %>
+</head>
+
+<body>
+
+      <% include partials/_header_default %>
+  <section id="login">
+  <div class="container-fluid h-100">
+      <div class="row h-100 justify-content-center align-items-center">
+        <form class="login-form shadow-sm" method="POST" action="/login">
+          <div class="form-group">
+            <div class="login-content">
+              <h1 class="display-5"> Welcome back!</h1>
+              <p>Please login to your account</p>
+            </div>
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" name="email" placeholder="Enter email">
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password">
+          </div>
+          <div class="button-group">
+            <button type="submit" class="btn btn-primary login-btn btn-lg">Login</button>
+            <a class="btn btn-outline-primary register-btn btn-lg" href ="/register">Register</a>
+          </div>
+        </form>
+    </div>
+  </div>
+</section>
+<% include partials/_footer %>
+
+</body>
+</html>

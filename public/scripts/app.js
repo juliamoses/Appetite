@@ -35,6 +35,13 @@ const itemsData = () => $.ajax({
 })
 itemsData();
 
+<<<<<<< HEAD
+=======
+function renderMenuItems(items) {
+  var i = 0;
+  for (item of items ) {
+    let $items = createItemElement(item);
+>>>>>>> feature/login
 
 //helper for renderMenuItems
 const createItemElement = (item) => {
