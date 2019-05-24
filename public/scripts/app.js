@@ -10,8 +10,8 @@
 //     }
 //   });;
 // });
+$(document).ready(function(){
 
-$(() => {
 const itemsData = () => $.ajax({
 	type: 'GET',
 	url: '/api/items',
@@ -23,11 +23,16 @@ const itemsData = () => $.ajax({
 })
 itemsData();
 
+
 function renderMenuItems(items) {
   var i = 0;
   for (item of items ) {
     console.log("item ", item);
     let $items = createItemElement(item);
+
+    let idTag = `#${item.id}`
+    console.log(idTag)
+      
 
     if (i < 4) {
       $('.card-row1').append($items);
@@ -35,6 +40,11 @@ function renderMenuItems(items) {
       $('.card-row2').append($items);
     }
     i++;
+ 
+
+    $(idTag).on('click', function (data) {
+      console.log(data);
+    })
   }
 }
 
@@ -46,29 +56,26 @@ function createItemElement(item) {
       <h5 class="">${item.name}</h5>
       <p class="card-text">Short desc of items</p>
       <p class="prices">$${(item.price/100).toFixed(2)}</p>
-      <button class="btn btn-primary btn-lg add-cart" type="submit">Add to Cart</button>
+      <button id="${item.id}" class="btn btn-primary btn-lg add-cart" type="submit">Add to Cart</button>
     </div>
   </div>
   `
 }
 
 
-// const addCart = () => {
-//   $('form').on('click', function(event) {
-//     event.preventDefault()
-  
 
-//       //on click of add to cart, populates
-//       $.ajax({
-//         type: 'POST',
-//         url: '/api/items',
-//         data: $(this).serialize(),
-//       }).done(function() {
-//       $('items');
-// 		  checkout();
-//       })
-//     })
-//   }
-//   // console.log("items", items);
-// addCart();
+
+
+
+
 });
+
+
+
+
+
+
+
+
+
+
