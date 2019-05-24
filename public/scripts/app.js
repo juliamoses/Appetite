@@ -13,14 +13,17 @@
 
 
 $(document).ready(function(){
+//adds count of items added to cart
 $('.counter').text(JSON.parse(localStorage.getItem('foodCart')).length)
 //when you click checkout make sure to clear localStorage
 
 let dbItems;
 
+
 if (!localStorage.getItem('foodCart')) {
   localStorage.setItem('foodCart', JSON.stringify([]))
 }
+
 
 const itemsData = () => $.ajax({
 	type: 'GET',
@@ -29,45 +32,43 @@ const itemsData = () => $.ajax({
 }).done(function (data) {
   dbItems = data;
   renderMenuItems(data);
-  // console.log("response: ", data);
 })
 itemsData();
 
 
-function renderMenuItems(items) {
-  var i = 0;
+//to show items from database and sort in rows
+const renderMenuItems = (items) => {
+  let i = 0;
   for (item of items ) {
     let $items = createItemElement(item);
     let idTag = `#${item.id}`
 
     if (i < 4) {
       $('.card-row1').append($items);
-    } else {
+    }else {
       $('.card-row2').append($items);
     }
     i++;
- 
 
-    $(idTag).on('click', function (data) {
+    //items added to cart sent to local storage
+    $(idTag).on('click', function(data) {
       let id = data.target.id;
-      console.log(dbItems);
-      console.log(data);
       let temp = dbItems.find(function(e){
         if (e.id == id) {
           return e;
         }
       })
-      let cart = JSON.parse(localStorage.getItem('foodCart'));
-      cart.push(temp)
-      localStorage.setItem('foodCart', JSON.stringify(cart))
 
-      $('.counter').text(cart.length);
+    //pushes items to cart
+    let cart = JSON.parse(localStorage.getItem('foodCart'));
+    cart.push(temp)
+    localStorage.setItem('foodCart', JSON.stringify(cart))
+    $('.counter').text(cart.length);
     })
   }
 }
 
-
-function createItemElement(item) {
+const createItemElement = (item) => {
   return `
   <div class="card">
     <img class="card-img-top" src="../images/pasta3.jpeg" alt="Card image cap">
@@ -81,21 +82,20 @@ function createItemElement(item) {
   `
 }
 
-
-function cartItems() {
+//to render only item price and name
+const cartItems = () => {
   let fullCart = localStorage.getItem('foodCart');
   let parsedItems = JSON.parse(fullCart);
 
  for(items of parsedItems) {
     let $cartItem = cartItemElements(items);
-      console.log(items)
-      $('.ck-row').append($cartItem);
+      $('.checkoutRow').append($cartItem);
     }
   }
 
 cartItems();
 
-
+//why dosen't this work in ES6???
 function cartItemElements(items) {
   return ` <p>${items.name}</p>`
 }
