@@ -29,7 +29,7 @@ const itemsData = () => $.ajax({
 }).done(function (data) {
   dbItems = data;
   renderMenuItems(data);
-  console.log("response: ", data);
+  // console.log("response: ", data);
 })
 itemsData();
 
@@ -37,12 +37,8 @@ itemsData();
 function renderMenuItems(items) {
   var i = 0;
   for (item of items ) {
-    console.log("item ", item);
     let $items = createItemElement(item);
-
     let idTag = `#${item.id}`
-    console.log(idTag)
-      
 
     if (i < 4) {
       $('.card-row1').append($items);
@@ -86,9 +82,23 @@ function createItemElement(item) {
 }
 
 
+function cartItems() {
+  let fullCart = localStorage.getItem('foodCart');
+  let parsedItems = JSON.parse(fullCart);
+
+ for(items of parsedItems) {
+    let $cartItem = cartItemElements(items);
+      console.log(items)
+      $('.ck-row').append($cartItem);
+    }
+  }
+
+cartItems();
 
 
-
+function cartItemElements(items) {
+  return ` <p>${items.name}</p>`
+}
 
 
 });
