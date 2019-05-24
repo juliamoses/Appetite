@@ -19,14 +19,12 @@ const itemsData = () => $.ajax({
 }).done(function (data) {
   
   renderMenuItems(data);
-  console.log("response: ", data);
 })
 itemsData();
 
 function renderMenuItems(items) {
   var i = 0;
   for (item of items ) {
-    console.log("item ", item);
     let $items = createItemElement(item);
 
     if (i < 4) {

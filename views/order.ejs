@@ -6,7 +6,11 @@
   </head>
 
   <body>
-      <% include partials/_header %>
+      <% if(user){ %>
+        <% include partials/_header_loggedin %>
+      <% } else { %>
+        <% include partials/_header_default %>
+      <% }; %>      
       <section id="order-hero">
           <div class="jumbotron hero-content">
             <h1 class="hero-header">Menu</h1>

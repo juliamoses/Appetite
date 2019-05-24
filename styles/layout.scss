@@ -65,6 +65,7 @@ body {
 
 #orders {
   padding: 2rem 10rem;
+  margin-bottom: 8rem;
   
   .order-headers {
     margin-bottom: 2rem;
@@ -112,7 +113,6 @@ body {
     padding: 10rem 10rem;
     background: none;
   }
-
   
 }
 
@@ -128,7 +128,8 @@ body {
       }
 
       
-    }
+}
+
 .img-wrap {
   width: 10%;
   height: 10%;
@@ -144,11 +145,11 @@ body {
 /* REGISTRATION
 | ==================================================================================== */
 
-#register {
+#register, #login {
   padding-top: 12rem;
   width: 40rem;
   margin: 0 auto;
-  
+
   .btn {
     width: 12rem;
     padding: 1rem 2rem;
@@ -161,5 +162,9 @@ body {
 
   .display-5{
     font-size: 2rem;
+  }
+
+  .register-btn {
+    color: $white-text;
   }
 }

@@ -21,6 +21,22 @@ const knexLogger  = require('knex-logger');
 const usersRoutes = require("./routes/users");
 const itemRoutes = require("./routes/items");
 
+
+// FAKE DB //
+const usersDatabase = {
+  "Daniel": {
+    id: "Daniel1",
+    email: "user@example.com",
+    password: "pu"
+  },
+  "Daniel2": {
+    id: "Daniel2",
+    email: "user@example.com",
+    password: "pu"
+  }
+}
+
+
 /////////APP.USE///////////////////////////
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
@@ -61,29 +77,46 @@ app.use("/api/items", itemRoutes(knex));
 //helper function for twillo text
 //users must provide email(twillo auth)
 
+//Generates Random String
+const generateRandomString = () => {
+  return Math.random().toString(36).substring(2,8);
+};
+
 /////////GET REQUESTS/////////////////////(most to least specific)
 
 // Home page
 app.get("/", (req, res) => {
-  res.render("index");
+
+  const userInfo = { user: req.session.user };
+
+  res.render("index", userInfo);
 });
 
 //get for order
 app.get("/order", (req, res) => {
+  const userInfo = { user: req.session.user };
   // let templateVars = {order}
-  res.render("order");
+  res.render("order", userInfo);
 });
 
 //get for checkout
 app.get("/checkout", (req,res) => {
-  res.render("checkout");
-})
+  const userInfo = { user: req.session.user };
+
+  res.render("checkout", userInfo);
+});
 
 //get for registration
 app.get("/register", (req, res) => {
+  
   res.render("register");
-})
+});
 
+
+//get for login
+app.get("/login", (req, res) => {
+  res.render("login");
+});
 
 /////////POST REQUESTS/////////////////////(most to least specific)
 
@@ -102,6 +135,28 @@ app.post("twillo/send",(req, res) => {
   }
   res.send("orders here!");
 });
+
+app.post("/register", (req, res) => {
+  const { email, password } = req.body;
+  // Generate new user
+  const id = generateRandomString();
+  const newUser = {
+    id,
+    email,
+    password
+  }
+  //Add new user to DB
+  usersDatabase[id] = newUser;
+  //Set cookie
+  req.session.user = newUser;
+  res.redirect("/");
+
+})
+
+app.post("/login", (req, res) => {
+  res.redirect("/");
+});
+
 
 
 app.listen(PORT, () => {
