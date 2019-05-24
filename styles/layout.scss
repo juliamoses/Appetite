@@ -139,4 +139,27 @@ body {
   display: flex;
   align-items: flex-start;
   margin-bottom: 30px;
+  }
+
+/* REGISTRATION
+| ==================================================================================== */
+
+#register {
+  padding-top: 12rem;
+  width: 40rem;
+  margin: 0 auto;
+  
+  .btn {
+    width: 12rem;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+  }
+
+  .login-content {
+    margin-bottom: 2rem;
+  }
+
+  .display-5{
+    font-size: 2rem;
+  }
 }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home Page</title>
+  <% include partials/_links %>
+</head>
+
+<body>
+  <% include partials/_header %>
+  <section id="register">
+      <div class="container-fluid h-100">
+          <div class="row h-100 justify-content-center align-items-center">
+            <form class="register-form shadow-sm" method="POST" action="/register">
+      
+              <div class="form-group">
+                <div class="login-content">
+                  <h1 class="display-5">Welcome to Food App</h1>
+                  <p>Order your favourites in no time, Register Now!</p>
+                </div>
+      
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" name="email" placeholder="Enter email">
+              </div>
+      
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Password">
+              </div>
+      
+               <div class="button-group">
+                <button type="submit" class="btn btn-primary register-btn btn-lg">Register</button>
+              </div>
+      
+            </form>
+          </div>
+        </div>
+  <% include partials/_footer %>
+  </section>  
+</body>
+</html>
