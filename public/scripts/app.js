@@ -68,6 +68,8 @@ const renderMenuItems = (items) => {
   }
 }
 
+
+//helper for renderMenuItems
 const createItemElement = (item) => {
   return `
   <div class="card">
@@ -89,15 +91,16 @@ const cartItems = () => {
 
  for(items of parsedItems) {
     let $cartItem = cartItemElements(items);
-      $('.checkoutRow').append($cartItem);
+      $('.checkout-row').append($cartItem);
     }
   }
 
 cartItems();
 
-//why dosen't this work in ES6???
-function cartItemElements(items) {
-  return ` <p>${items.name}</p>`
+
+//helper for cartItemElements
+const cartItemElements = (items) => {
+  return ` <p>${items.name}</p><p>${items.price}</p>`
 }
 
 
