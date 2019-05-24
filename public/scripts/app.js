@@ -85,7 +85,7 @@ const renderMenuItems = (items) => {
 }
 
 
-//header for cartItemElements
+//helper for cartItemElements
  const cartItemElements = (items) => {
   return ` <p>${items.name}</p><p>${items.price}</p>`
 }
