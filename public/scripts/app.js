@@ -36,6 +36,22 @@ const itemsData = () => $.ajax({
 itemsData();
 
 
+//helper for renderMenuItems
+const createItemElement = (item) => {
+  return `
+  <div class="card">
+    <img class="card-img-top" src="../images/pasta3.jpeg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="">${item.name}</h5>
+      <p class="card-text">Short desc of items</p>
+      <p class="prices">$${(item.price/100).toFixed(2)}</p>
+      <button id="${item.id}" class="btn btn-primary btn-lg add-cart" type="submit">Add to Cart</button>
+    </div>
+  </div>
+  `
+}
+
+
 //to show items from database and sort in rows
 const renderMenuItems = (items) => {
   let i = 0;
@@ -69,19 +85,9 @@ const renderMenuItems = (items) => {
 }
 
 
-//helper for renderMenuItems
-const createItemElement = (item) => {
-  return `
-  <div class="card">
-    <img class="card-img-top" src="../images/pasta3.jpeg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="">${item.name}</h5>
-      <p class="card-text">Short desc of items</p>
-      <p class="prices">$${(item.price/100).toFixed(2)}</p>
-      <button id="${item.id}" class="btn btn-primary btn-lg add-cart" type="submit">Add to Cart</button>
-    </div>
-  </div>
-  `
+//header for cartItemElements
+ const cartItemElements = (items) => {
+  return ` <p>${items.name}</p><p>${items.price}</p>`
 }
 
 //to render only item price and name
@@ -96,12 +102,6 @@ const cartItems = () => {
   }
 
 cartItems();
-
-
-//helper for cartItemElements
-const cartItemElements = (items) => {
-  return ` <p>${items.name}</p><p>${items.price}</p>`
-}
 
 
 });
