@@ -88,3 +88,12 @@ body {
   -ms-flex-align: start;
   align-items: flex-start;
   margin-bottom: 30px; }
+
+#checkout-tbl {
+  background-color: #eee;
+  height: 500px; }
+
+.checkout-row {
+  background-color: red;
+  height: 100px; }
+
