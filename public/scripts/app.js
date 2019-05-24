@@ -14,7 +14,6 @@
 
 $(document).ready(function(){
 //adds count of items added to cart
-$('.counter').text(JSON.parse(localStorage.getItem('foodCart')).length)
 //when you click checkout make sure to clear localStorage
 
 let dbItems;
@@ -24,6 +23,7 @@ if (!localStorage.getItem('foodCart')) {
   localStorage.setItem('foodCart', JSON.stringify([]))
 }
 
+$('.counter').text(JSON.parse(localStorage.getItem('foodCart')).length)
 
 const itemsData = () => $.ajax({
 	type: 'GET',
@@ -31,17 +31,11 @@ const itemsData = () => $.ajax({
 	dataType: 'json'
 }).done(function (data) {
   dbItems = data;
+  console.log(dbItems);
   renderMenuItems(data);
 })
-itemsData();
 
-<<<<<<< HEAD
-=======
-function renderMenuItems(items) {
-  var i = 0;
-  for (item of items ) {
-    let $items = createItemElement(item);
->>>>>>> feature/login
+itemsData();
 
 //helper for renderMenuItems
 const createItemElement = (item) => {
@@ -93,7 +87,7 @@ const renderMenuItems = (items) => {
 
 
 //helper for cartItemElements
- const cartItemElements = (items) => {
+const cartItemElements = (items) => {
   return ` <p>${items.name}</p><p>${items.price}</p>`
 }
 
@@ -107,9 +101,9 @@ const cartItems = () => {
       $('.checkout-row').append($cartItem);
     }
   }
-
+  
 cartItems();
-
+  
 
 });
 
