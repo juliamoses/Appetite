@@ -10,14 +10,24 @@
 //     }
 //   });;
 // });
+
+
 $(document).ready(function(){
+$('.counter').text(JSON.parse(localStorage.getItem('foodCart')).length)
+//when you click checkout make sure to clear localStorage
+
+let dbItems;
+
+if (!localStorage.getItem('foodCart')) {
+  localStorage.setItem('foodCart', JSON.stringify([]))
+}
 
 const itemsData = () => $.ajax({
 	type: 'GET',
 	url: '/api/items',
 	dataType: 'json'
 }).done(function (data) {
-  
+  dbItems = data;
   renderMenuItems(data);
   console.log("response: ", data);
 })
@@ -43,10 +53,23 @@ function renderMenuItems(items) {
  
 
     $(idTag).on('click', function (data) {
+      let id = data.target.id;
+      console.log(dbItems);
       console.log(data);
+      let temp = dbItems.find(function(e){
+        if (e.id == id) {
+          return e;
+        }
+      })
+      let cart = JSON.parse(localStorage.getItem('foodCart'));
+      cart.push(temp)
+      localStorage.setItem('foodCart', JSON.stringify(cart))
+
+      $('.counter').text(cart.length);
     })
   }
 }
+
 
 function createItemElement(item) {
   return `
