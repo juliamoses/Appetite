@@ -21,6 +21,12 @@ const MessagingResponse = require('twilio').twiml.MessagingResponse;
 const usersRoutes = require("./routes/users");
 const itemRoutes = require("./routes/items");
 
+////////API Twilio resources///////////////
+
+const accountSid = 'AC55535e36229687b8c837b28720d4ff35';
+const authToken = '6f744798e7d9ab0380a556356c3081a8';
+const client = require('twilio')(accountSid, authToken);
+
 /////////APP.USE///////////////////////////
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
@@ -89,9 +95,6 @@ app.post("/order/update", (req, res) => {
 //   }
 //   res.send("orders here!");
 // });
-const accountSid = 'AC55535e36229687b8c837b28720d4ff35';
-const authToken = '6f744798e7d9ab0380a556356c3081a8';
-const client = require('twilio')(accountSid, authToken);
 
 client.messages
   .create({
@@ -99,13 +102,15 @@ client.messages
      from: '+16475035109',
      to: '+16473904501'
    })
-client.messages 
-   .create({
-    body: 'Your order is being processed and will be ready in 20 min',
-    from: '+16475035109',
-    to: '+16473904501'
-  })
-  .then(message => console.log(message.sid));
+
+app.post('/sms', (req, res) => {
+  const twiml = new MessagingResponse();
+
+  twiml.message('Your order will be ready in 20');
+
+  res.writeHead(200, {'Content-Type': 'text/xml'});
+  res.end(twiml.toString());
+});
   
 
 app.listen(PORT, () => {
