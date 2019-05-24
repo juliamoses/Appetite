@@ -126,3 +126,9 @@ body {
   height: 10%;
   border-radius: 10rem;
 }
+
+.card-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
