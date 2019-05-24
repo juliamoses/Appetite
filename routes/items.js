@@ -11,8 +11,8 @@ module.exports = (knex) => {
       .select("*")
       .from("items")
       .then((results) => {
-          console.log(results);
-        res.json(results);
+      console.log(results);
+      res.json(results);
     });
   });
 

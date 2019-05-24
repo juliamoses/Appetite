@@ -10,7 +10,7 @@ module.exports = (knex) => {
       .select("*")
       .from("order_items")
       .then((results) => {
-        res.json(results);
+      res.json(results);
     });
   });
 
