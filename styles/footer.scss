@@ -13,7 +13,6 @@ footer {
   background-color: $primary-color;
   color: $white-text;
   text-align: center;
-  height: 10rem;
 
   p {
     padding-top: 2rem;
@@ -55,4 +54,9 @@ footer {
       color: $secondary-color;
     }
   }
+
+  .mapouter {
+    padding-top: 2rem;
+  }
+
 }
