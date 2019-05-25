@@ -200,3 +200,44 @@ body {
     padding: 0rem 2rem;
   }
 }
+
+
+
+/* ABOUT 
+| ==================================================================================== */
+
+.container {
+  width: 1440px;
+  display: flex;
+  padding-top: 8rem;
+
+  .jumbotron {
+    background-color: #fff;
+  }
+
+  .about-content {
+    width: 80%;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  h3 {
+    padding-bottom: 1rem;
+  }
+
+  .about-img-container {
+    border-radius: 50rem;
+    background: 
+    url(../images/steak.jpeg);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 100%;
+  }
+}
+
+/* ABOUT 
+| ==================================================================================== */
