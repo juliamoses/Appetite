@@ -316,3 +316,17 @@ body {
     align-self: center;
   }
 }
+
+
+/* SLIDER
+| ==================================================================================== */
+
+
+.carousel-item {
+  max-height: 100vh;
+
+  }
+
+  .carousel-inner>.item {
+    transition: transform 0.2s ease-in-out !important;
+}
