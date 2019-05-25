@@ -45,7 +45,7 @@ itemsData();
 const createItemElement = (item) => {
   return `
   <div class="card">
-    <img class="card-img-top" src="../images/pasta3.jpeg" alt="Card image cap">
+    <img class="card-img-top" src="${item.image_url}" alt="Card image cap">
     <div class="card-body">
       <h5 class="">${item.name}</h5>
       <p class="card-text">Short desc of items</p>

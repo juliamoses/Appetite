@@ -330,7 +330,17 @@ body {
     padding: 1.2rem 1rem;
     align-self: center;
   }
+
 }
+    .card-img-top {
+      width: auto;
+      height: 10rem;
+
+      img {
+        width: auto;
+        height: auto;
+      }
+    }
 
 
 /* SLIDER
