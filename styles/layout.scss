@@ -7,59 +7,26 @@
 
 body {
   background-color: #EEE;
-  font-family: 'Montserrat', sans-serif!important;
-  color: $white-text;
+  font-family: 'Montserrat', sans-serif !important;
+  line-height: 2rem !important;
 
+  
   .btn {
     border: none;
     border-radius: 5rem;
     background-color: $secondary-color;
     font-size: 0.8rem;
     text-transform: uppercase;
-
+    
   }
-
+  
   .btn:focus {
     outline: none;
   }
-
+  
   .btn:hover {
     background-color: #129c90;;
-
-  }
-}
-
-#hero {
-  width: 100%;
-  height: 40rem;
-  background: 
-  url(../images/hero-bg.jpeg);
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  color: $white-text;
-
-  .hero-content {
-    padding: 12rem 5rem;
-    background: none;
-    width: 40%;
-  }
-  
-  .hero-header {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 4.5rem;
-    margin-bottom: 2rem;
-    line-height: 5rem;
-  }
-  p {
-    color: $white-text;
-  }
-
-  .btn {
-    margin-top: 1rem;
-    width: 10rem;
-    padding: 1rem 0rem;
+    
   }
 }
 
@@ -97,12 +64,13 @@ body {
 
 #order-hero {
   h1{
+    padding-top: 2rem;
     font-size: 3.5rem;
   }
   width: 100%;
   height: 20rem;
   background: 
-  url(../images/order-header.jpeg);
+  url(../images/order-header2.jpg);
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -123,11 +91,10 @@ body {
 #checkout {
       padding: 15rem 15rem 2rem 15rem;
 
-      h2 {
-        margin-bottom: 2rem;
-      }
+    h2 {
+      margin-bottom: 2rem;
+    } 
 
-      
 }
 
 .img-wrap {
@@ -188,7 +155,8 @@ body {
 | ==================================================================================== */
 
 #register, #login {
-  padding-top: 12rem;
+  padding-top: 8rem;
+  height: 100vh;
   width: 40rem;
   margin: 0 auto;
 
@@ -230,4 +198,185 @@ body {
   .btn {
     padding: 0rem 2rem;
   }
+}
+
+
+
+/* ABOUT 
+| ==================================================================================== */
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding-top: 8rem;
+
+  .jumbotron {
+    background-color: #fff;
+  }
+
+  .about-content {
+    width: 35%;
+    margin-left: 12rem;
+    align-self: center;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #5c648b;
+  }
+
+  h2 {
+    padding-bottom: 1rem;
+  }
+
+  .about-img-container {
+    border-top-left-radius: 10rem;
+    border-bottom-left-radius: 10rem;
+    background: 
+    url(../images/steak.jpeg);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    height: 30rem;
+    width: 50%;
+  }
+}
+
+/* STEPS SECTION 
+| ==================================================================================== */
+
+#steps {
+  .steps-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .steps-img-container {
+    border-top-right-radius: 10rem;
+    border-bottom-right-radius: 10rem;
+    background: 
+    url(../images/cook.jpeg);
+    background-size: 100%;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    height: 30rem;
+    width: 50%;
+  }
+  
+  .steps-content {
+    width: 40%;
+    margin-left: 2rem;
+    margin-right: 10rem;
+    background: none;
+    align-self: center;
+    padding-bottom: 0rem;
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+  
+  ul {
+    padding: 0 0;
+  }
+  
+  li {
+    display:flex;
+    align-content: center;
+    list-style: none;
+    margin-bottom: 1rem; 
+    
+  p {
+    padding-top: 0.8rem;
+    text-align: left;
+    color: #5c648b;
+  }
+  
+  }
+
+  .fa-mobile-alt {
+    margin-left: 0.5rem;
+    padding-right: 0.3rem;
+  }
+
+  i {
+    font-size: 2.5rem;
+    color: $primary-color;
+    align-self: center;
+    margin-right: 2rem;
+
+  }
+
+}
+
+/* ORDER 
+| ==================================================================================== */
+#order {
+  background-color: #eef0f8;
+  margin-top: 4rem;
+  padding: 3rem 0rem;
+
+  .container {
+    padding: 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .btn {
+    width: 15rem;
+    margin-top: 2rem;
+    padding: 1.2rem 1rem;
+    align-self: center;
+  }
+}
+
+
+/* SLIDER
+| ==================================================================================== */
+
+.carousel-inner {
+  position: relative;
+
+  .hero-content {
+    color: $white-text;
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    text-align: left;
+    z-index: 10;
+    padding: 12rem 5rem;
+    width: 40%;
+  
+  .hero-header {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+    line-height: 5rem;
+  }
+  p {
+    color: $white-text;
+  }
+
+  .btn {
+    margin-top: 1rem;
+    width: 10rem;
+    padding: 1rem 0rem;
+  }
+
+  .fa-next{
+    position: absolute;
+    left: 0;
+  }
+}
+  
+  .carousel-item {
+    max-height: 100vh;
+  }
+}
+
+.carousel-inner>.item {
+    transition: transform 0.2s ease-in-out !important;
 }

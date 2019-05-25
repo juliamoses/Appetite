@@ -137,6 +137,7 @@ app.post("/order/update", (req, res) => {
   res.redirect("order");
 });
 
+<<<<<<< HEAD
 // post to chckout on order submit
 app.post("/checkout", (req, res) => {
   console.log("checkout ", req.body);
@@ -154,6 +155,33 @@ console.log('message is', msg)
     to: '+16473904501'
   })
   res.json({success: true});
+=======
+
+//twillo(read up on)
+// app.post("twillo/send",(req, res) => {
+//   if (!isConfigured) {
+//   var errorMessage =
+//     'TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, and TWILIO_NUMBER must be set.';
+//   throw new Error(errorMessage);
+//   }
+//   res.send("orders here!");
+// });
+
+// client.messages
+//   .create({
+//      body: 'Order placed by customer',
+//      from: '+16475035109',
+//      to: '+16473904501'
+//    })
+
+app.post('/sms', (req, res) => {
+  const twiml = new MessagingResponse();
+
+  twiml.message('Your order will be ready in 20');
+
+  res.writeHead(200, {'Content-Type': 'text/xml'});
+  res.end(twiml.toString());
+>>>>>>> feature/order-images
 });
 
   

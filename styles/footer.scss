@@ -7,17 +7,56 @@
 
     
 footer {
-  position: fixed;
-  left: 0;
+  position: relative;
   bottom: 0;
   width: 100%;
   background-color: $primary-color;
   color: $white-text;
   text-align: center;
-  margin-top: 4rem;
-  height: 5rem;
 
   p {
     padding-top: 2rem;
+    margin-bottom: 0;
   }
+
+  .footer-copyright {
+    margin-top: 2rem;
+    color: $body-font;
+    font-size: 0.8rem;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 10rem;
+  }
+
+  .directions {
+    display: flex;
+
+    i {
+      margin-left: 2rem;
+      color: $secondary-color;
+    }
+  }
+
+  .social {
+    padding-top: 1.8rem;
+    display: flex;
+    a {
+      color: $white-text;
+    }
+    i {
+      font-size: 1.5rem;
+    }
+    
+    i:hover {
+      color: $secondary-color;
+    }
+  }
+
+  .mapouter {
+    padding-top: 2rem;
+  }
+
 }
