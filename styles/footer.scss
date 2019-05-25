@@ -7,17 +7,14 @@
 
     
 footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
   width: 100%;
   background-color: $primary-color;
   color: $white-text;
   text-align: center;
-  margin-top: 4rem;
-  height: 5rem;
+  height: 10rem;
 
   p {
     padding-top: 2rem;
+    margin-bottom: 0;
   }
 }
