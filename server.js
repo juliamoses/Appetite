@@ -125,6 +125,11 @@ app.get("/login", (req, res) => {
   res.render("login");
 });
 
+app.get("/checkout/final", (req, res) => {
+  res.render("/checkout/final");
+});
+
+
 /////////POST REQUESTS/////////////////////(most to least specific)
 
 //post to update
@@ -132,34 +137,26 @@ app.post("/order/update", (req, res) => {
   res.redirect("order");
 });
 
-
-//twillo(read up on)
-// app.post("twillo/send",(req, res) => {
-//   if (!isConfigured) {
-//   var errorMessage =
-//     'TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, and TWILIO_NUMBER must be set.';
-//   throw new Error(errorMessage);
-//   }
-//   res.send("orders here!");
-// });
-
-client.messages
+// post to chckout on order submit
+app.post("/checkout", (req, res) => {
+  console.log("checkout ", req.body);
+  const msg = client.messages
   .create({
-     body: 'Order placed by customer',
+     body: `Order placed by ${req.body.name}. Phone # ${req.body['phone-number']} Please respond to customer with an estimate of when order will be ready for pickup`,
      from: '+16475035109',
      to: '+16473904501'
    })
-
-app.post('/sms', (req, res) => {
-  const twiml = new MessagingResponse();
-
-  twiml.message('Your order will be ready in 20');
-
-  res.writeHead(200, {'Content-Type': 'text/xml'});
-  res.end(twiml.toString());
+console.log('message is', msg)
+  client.messages
+   .create({
+    body: 'Order being processed.',
+    from: '+16475035109',
+    to: '+16473904501'
+  })
+  res.json({success: true});
 });
-  
 
+  
 app.post("/register", (req, res) => {
   const { email, password } = req.body;
   // Generate new user

@@ -1,18 +1,23 @@
-// get request to database uses jquery to append to body
-// $(() => {
-//   $.ajax({
-//     method: "GET",
-//     url: "/api/items"
-//   }).done((items) => {
-//     for(item of items) {
-//       $("<div>").text(item.name).appendTo($("body"));
-//       $('<div>').text(item.price).appendTo($("body"));
-//     }
-//   });;
-// });
 
 
+// on order submit pushing cart items, name and phone # to /checkout post req
 $(document).ready(function(){
+  $('.twilio-frm').on('submit', event => {
+    event.preventDefault();
+    let data = $('.twilio-frm').serializeArray();
+    data.push({name: 'cartItems', value: localStorage.getItem('foodCart')});
+    $.ajax({
+      data: $.param(data),// add items in cart, name, and phonenumber
+      url: "/checkout",
+      type: "post",
+    })
+    .done(function (){
+      localStorage.removeItem('foodCart');
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      })
+    });
 //adds count of items added to cart
 //when you click checkout make sure to clear localStorage
 
@@ -31,7 +36,7 @@ const itemsData = () => $.ajax({
 	dataType: 'json'
 }).done(function (data) {
   dbItems = data;
-  console.log(dbItems);
+  // console.log(dbItems);
   renderMenuItems(data);
 })
 
@@ -75,10 +80,17 @@ const renderMenuItems = (items) => {
           return e;
         }
       })
-
+    //pushes items to hidden form field
+    let cartForm = JSON.parse(localStorage.getItem('foodCart'));
+    cartForm.push(temp);
+    console.log('food cart: ', cartForm);
+    var fd = new FormData(document.getElementById("orderArr"));
+    for (var i = 0; i < cartForm.length; i++) {
+    fd.append('cartForm[]', cartForm[i]);
+  }
     //pushes items to cart
     let cart = JSON.parse(localStorage.getItem('foodCart'));
-    cart.push(temp)
+    cart.push(temp);
     localStorage.setItem('foodCart', JSON.stringify(cart))
     $('.counter').text(cart.length);
     })
@@ -103,9 +115,10 @@ const cartItems = () => {
   }
   
 cartItems();
-  
-
 });
+
+
+
 
 
 
