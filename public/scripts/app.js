@@ -124,17 +124,6 @@ const cartItems = () => {
   }
   
 cartItems();
-<<<<<<< HEAD
-=======
-
-// //to delete items in cart
-// $('.fa-times').on('click', function(data) {
-
-
-//   })
-
-
->>>>>>> 8919570f6def6c02808d24586744d9665a5df689
 });
 
 
