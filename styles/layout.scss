@@ -121,7 +121,7 @@ body {
 | ==================================================================================== */
 
 #checkout {
-      padding: 10rem 15rem;
+      padding: 15rem 15rem 2rem 15rem;
 
       h2 {
         margin-bottom: 2rem;
@@ -146,13 +146,42 @@ body {
 #checkout-tbl {
   background-color: #eee;
   height: 500px;
-
+  padding: 50px;
 }
 
 .checkout-row {
-  background-color: red;
-  height:100px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+
 }
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-price {
+  margin-left: 4rem;
+}
+
+.item-name {
+  padding-left: 1rem;
+}
+
+.checkout-row-first {
+  border-radius: 15px;
+}
+
+
+.item-content {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+
+
+
+
 
 
 /* REGISTRATION
@@ -189,11 +218,13 @@ body {
 #checkout-frm {
   width: 60%;
   margin: 0 auto;
+  padding-bottom: 14rem;
 
   .twillio-frm {
     background-color: $primary-color;
     padding: 1.5rem 2rem;
     border-radius: 1rem;
+
   }
 
   .btn {

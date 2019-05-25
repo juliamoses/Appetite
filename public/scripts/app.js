@@ -100,7 +100,15 @@ const renderMenuItems = (items) => {
 
 //helper for cartItemElements
 const cartItemElements = (items) => {
-  return ` <p>${items.name}</p><p>${items.price}</p>`
+  return ` <div class='row'>
+            <div class='item-content'>
+              <p class='item-name'>${items.name}</p>
+              <p class='item-price'>$${(items.price/100).toFixed(2)}</p>
+            </div>
+            <div>
+              <i class="fas fa-times"></i>
+            </div>
+          </div>`
 }
 
 //to render only item price and name
@@ -115,6 +123,17 @@ const cartItems = () => {
   }
   
 cartItems();
+<<<<<<< HEAD
+=======
+
+// //to delete items in cart
+// $('.fa-times').on('click', function(data) {
+
+
+//   })
+
+
+>>>>>>> 8919570f6def6c02808d24586744d9665a5df689
 });
 
 
