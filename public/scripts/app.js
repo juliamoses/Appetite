@@ -20,6 +20,7 @@ $(document).ready(function(){
     });
 //adds count of items added to cart
 //when you click checkout make sure to clear localStorage
+// ok
 
 let dbItems;
 
