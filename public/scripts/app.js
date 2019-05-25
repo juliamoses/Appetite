@@ -13,9 +13,6 @@ $(document).ready(function(){
     })
     .done(function (){
       localStorage.removeItem('foodCart');
-      <div class="spinner-border" role="status">
-        <span class="sr-only">Loading...</span>
-      </div>
       })
     });
 //adds count of items added to cart
