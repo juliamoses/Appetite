@@ -13,6 +13,7 @@ $(document).ready(function(){
     })
     .done(function (){
       localStorage.removeItem('foodCart');
+      window.location.href = "/";
       })
     });
 //adds count of items added to cart

@@ -139,20 +139,19 @@ app.post("/order/update", (req, res) => {
 
 // post to chckout on order submit
 app.post("/checkout", (req, res) => {
-  console.log("checkout ", req.body);
   const msg = client.messages
   .create({
      body: `Order placed by ${req.body.name}. Phone # ${req.body['phone-number']} Please respond to customer with an estimate of when order will be ready for pickup`,
      from: '+16475035109',
      to: '+16473904501'
    })
-console.log('message is', msg)
   client.messages
    .create({
     body: 'Order being processed.',
     from: '+16475035109',
     to: '+16473904501'
   })
+  res.redirect("/")
   res.json({success: true});
 });
 
