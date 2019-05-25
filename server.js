@@ -143,12 +143,12 @@ app.post("/order/update", (req, res) => {
 //   res.send("orders here!");
 // });
 
-client.messages
-  .create({
-     body: 'Order placed by customer',
-     from: '+16475035109',
-     to: '+16473904501'
-   })
+// client.messages
+//   .create({
+//      body: 'Order placed by customer',
+//      from: '+16475035109',
+//      to: '+16473904501'
+//    })
 
 app.post('/sms', (req, res) => {
   const twiml = new MessagingResponse();
