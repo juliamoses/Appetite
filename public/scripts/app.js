@@ -13,9 +13,12 @@ $(document).ready(function(){
     })
     .done(function (){
       localStorage.removeItem('foodCart');
-      window.location.href = "/";
-      })
-    });
+    })
+  });
+  
+  $('.close-btn').on('click', event => {
+    window.location.href = "/";
+  })
 //adds count of items added to cart
 //when you click checkout make sure to clear localStorage
 // ok

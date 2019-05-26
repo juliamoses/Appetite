@@ -393,3 +393,26 @@ body {
 .carousel-inner>.item {
     transition: transform 0.2s ease-in-out !important;
 }
+
+
+/* SLIDER
+| ==================================================================================== */
+.modal {
+  text-align: center;
+
+  i {
+    padding-top: 2rem;
+    font-size: 4rem;
+    color: #0cd1a0;
+  }
+
+  p {
+    color: #5c648b;
+    padding-top: 0.8rem;
+  }
+
+  .close-btn {
+    padding: 1rem 3rem;
+    margin: 0 auto;
+  }
+}
