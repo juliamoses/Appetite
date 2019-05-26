@@ -2,6 +2,7 @@
 
 // on order submit pushing cart items, name and phone # to /checkout post req
 $(document).ready(function(){
+
   $('.twilio-frm').on('submit', event => {
     event.preventDefault();
     let data = $('.twilio-frm').serializeArray();
@@ -15,10 +16,11 @@ $(document).ready(function(){
       localStorage.removeItem('foodCart');
       window.location.href = "/";
       })
-    });
+  });
+
 //adds count of items added to cart
 //when you click checkout make sure to clear localStorage
-// ok
+
 
 let dbItems;
 
@@ -82,7 +84,6 @@ const renderMenuItems = (items) => {
     //pushes items to hidden form field
     let cartForm = JSON.parse(localStorage.getItem('foodCart'));
     cartForm.push(temp);
-    console.log('food cart: ', cartForm);
     var fd = new FormData(document.getElementById("orderArr"));
     for (var i = 0; i < cartForm.length; i++) {
     fd.append('cartForm[]', cartForm[i]);
@@ -105,7 +106,7 @@ const cartItemElements = (items) => {
               <p class='item-price'>$${(items.price/100).toFixed(2)}</p>
             </div>
             <div>
-              <i class="fas fa-times"></i>
+              <i id="${items.id}" class="fas fa-times"></i>
             </div>
           </div>`
 }
@@ -113,26 +114,39 @@ const cartItemElements = (items) => {
 //to render only item price and name
 const cartItems = () => {
   let fullCart = localStorage.getItem('foodCart');
+  // console.log("the id", id)
   let parsedItems = JSON.parse(fullCart);
+
 
  for(items of parsedItems) {
     let $cartItem = cartItemElements(items);
       $('.checkout-row').append($cartItem);
     }
   }
-  
+
 cartItems();
+
+
+//to delete item from cart
+$('.fa-times').on('click', function (e) {
+  e.preventDefault();
+  const cart = JSON.parse(localStorage.getItem('foodCart'));
+  const itemId = e.target.id
+  console.log(cart.length)
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i].id == itemId) {
+      cart.splice(i, 1);
+    }
+  }
+   console.log(cart.length)
+  localStorage.setItem('foodCart', JSON.stringify(cart));
+  $('.counter').text(cart.length);
+  $('.checkout-row').empty();
+  cartItems();
+  // window.location.reload();
 });
 
 
 
-
-
-
-
-
-
-
-
-
+});
 
