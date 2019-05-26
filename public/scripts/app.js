@@ -38,7 +38,6 @@ const itemsData = () => $.ajax({
 	dataType: 'json'
 }).done(function (data) {
   dbItems = data;
-  // console.log(dbItems);
   renderMenuItems(data);
 })
 
@@ -84,7 +83,7 @@ const renderMenuItems = (items) => {
     //pushes items to hidden form field
     let cartForm = JSON.parse(localStorage.getItem('foodCart'));
     cartForm.push(temp);
-    console.log('food cart: ', cartForm);
+    console.log('food cart:', cartForm);
     var fd = new FormData(document.getElementById("orderArr"));
     for (var i = 0; i < cartForm.length; i++) {
     fd.append('cartForm[]', cartForm[i]);

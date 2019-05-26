@@ -186,17 +186,18 @@ body {
 #checkout-frm {
   width: 60%;
   margin: 0 auto;
-  padding-bottom: 14rem;
+  padding-bottom: 8rem;
 
-  .twillio-frm {
+  .twilio-frm {
     background-color: $primary-color;
-    padding: 1.5rem 2rem;
-    border-radius: 1rem;
+    padding: 1.5rem 4rem;
+    border-radius: 3rem;
 
   }
 
   .btn {
-    padding: 0rem 2rem;
+    padding: 0rem 3rem;
+    margin-left: 1rem;
   }
 }
 
@@ -335,15 +336,15 @@ body {
   }
 
 }
-    .card-img-top {
-      width: auto;
-      height: 10rem;
+  .card-img-top {
+    width: auto;
+    height: 10rem;
 
-      img {
-        width: auto;
-        height: auto;
-      }
+    img {
+      width: auto;
+      height: auto;
     }
+  }
 
 
 /* SLIDER
@@ -369,6 +370,7 @@ body {
     margin-bottom: 2rem;
     line-height: 5rem;
   }
+
   p {
     color: $white-text;
   }
@@ -383,6 +385,7 @@ body {
     position: absolute;
     left: 0;
   }
+
 }
   
   .carousel-item {
