@@ -155,23 +155,34 @@ app.post("/checkout", (req, res) => {
   res.json({success: true});
 });
 
-  
+//Register new users
 app.post("/register", (req, res) => {
   const { email, password } = req.body;
-  // Generate new user
-  const id = generateRandomString();
-  const newUser = {
-    id,
-    email,
-    password
-  }
-  //Add new user to DB
-  usersDatabase[id] = newUser;
-  //Set cookie
-  req.session.user = newUser;
-  res.redirect("/");
 
-})
+  //check if email exists in DB
+  knex.select("email")
+  .from("users_db")
+  .where("email", email)
+  .andWhere("password", password)
+  .then( (userEmail) => {
+      if (userEmail.length === 0) {
+          return knex('users_db')
+            .returning('id')
+            .insert([{
+              email,
+              password
+            }])
+            .then((newUserId) => {
+              res.redirect("/");
+              console.log('inserted user', newUserId);
+            });
+      }
+  res.status(403).send('Email already exists');
+  return;
+});
+
+});
+
 
 app.post("/login", (req, res) => {
   res.redirect("/");
