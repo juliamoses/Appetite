@@ -147,7 +147,7 @@ app.post("/register", (req, res) => {
   const { email, password } = req.body;
   const hashedPassword = bcrypt.hashSync(password, 12);
   
-  //check if email exists in DB
+  //check if email exists in DB, if email doesn't exist adds new user
   knex.select("email")
   .from("users_db")
   .where("email", email)
@@ -173,7 +173,17 @@ app.post("/register", (req, res) => {
 
 
 app.post("/login", (req, res) => {
-  res.redirect("/");
+  const { email, password } = req.body;
+
+  knex.select("email")
+  .from("users_db")
+  .where("email", email)
+  .andWhere("password", password)
+  .then( (userEmail) => {
+    if (userEmail) {
+      bcrypt.compareSync(password, usersDatabase[user].password)){
+    }
+  res.redirect("/login");
 });
 
 
