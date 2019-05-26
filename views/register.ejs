@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <title>Register</title>
+  <!-- Partial for stylesheets and scripts -->
   <% include partials/_links %>
 </head>
 
@@ -11,30 +12,32 @@
       <div class="container-fluid h-100">
           <div class="row h-100 justify-content-center align-items-center">
             <form class="register-form shadow-sm" method="POST" action="/register">
-      
+
+              <!-- Greeting Message -->
+              <div class="register-content">
+                <h1 class="display-5">Welcome to Food App</h1>
+                <p>Order your favourites in no time, Register Now!</p>
+              </div>
+            <!-- Email  -->
               <div class="form-group">
-                <div class="login-content">
-                  <h1 class="display-5">Welcome to Food App</h1>
-                  <p>Order your favourites in no time, Register Now!</p>
-                </div>
-      
                 <label for="email">Email address</label>
                 <input type="email" class="form-control" name="email" placeholder="Enter email" required>
               </div>
-      
+              <!-- Password -->
               <div class="form-group">  
                 <label for="password">Password</label>
                 <input type="password" class="form-control" name="password" placeholder="Password" required>
               </div>
-      
+              <!-- Submit  -->
                <div class="button-group">
                   <button type="submit" class="btn btn-primary register-btn btn-lg">Register</button>
-                </div>
+               </div>
       
             </form>
           </div>
         </div>
       </section>
+      <!-- Footer Partial -->
       <% include partials/_footer %>
 </body>
 </html>
