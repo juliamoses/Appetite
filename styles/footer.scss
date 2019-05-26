@@ -14,6 +14,14 @@ footer {
   color: $white-text;
   text-align: center;
 
+  a {
+    color: $secondary-color;
+  }
+
+  a:hover {
+    color: #129c90;
+  }
+  
   p {
     padding-top: 2rem;
     margin-bottom: 0;

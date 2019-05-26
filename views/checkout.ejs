@@ -33,15 +33,33 @@
         <form class="twilio-frm"> 
             <div class="row">
               <div class="col">
-                <input type="text" name="name" class="form-control" placeholder="First name">
+                <input type="text" name="name" class="form-control" placeholder="Enter your name">
               </div>
               <div class="col">
-                <input class="form-control" name="phone-number" type="tel" value="1-(647)-555-5555" id="example-tel-input" name="cartForm" id="orderArr" type="hidden">
+                <input class="form-control" name="phone-number" type="tel" placeholder="1-(647)-555-5555" id="example-tel-input" name="cartForm" id="orderArr" type="hidden">
               </div>
-              <button type="submit" class="twilio-btn btn btn-primary">Order</button>
+              <button type="submit" data-toggle="modal" data-target="#exampleModalCenter" class="twilio-btn btn btn-primary">Send Order</button>
             </div>
           </form>
     </section>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p><i class="fas fa-check-circle"></i></p>
+            <h2 class="modal-title"> Thanks for ordering</h2>
+            <p>Your order is being processed and you should receive a text confirmation from us shortly</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
     <% include partials/_footer %>
   </body>
 

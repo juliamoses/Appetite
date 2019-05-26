@@ -31,13 +31,13 @@ body {
 }
 
 #orders {
-  padding: 2rem 10rem;
-  margin-bottom: 8rem;
+  padding: 4rem 10rem 2rem 10rem;
+  margin: 2rem 0rem;
   
-  .order-headers {
-    margin-bottom: 2rem;
-    margin-top: 4rem;
-  }
+  // .order-headers {
+  //   margin-bottom: 2rem;
+  //   margin-top: 4rem;
+  // }
   
   .prices {
     font-size: 1.2rem;
@@ -45,7 +45,7 @@ body {
   }
   h5 {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
   }
   
   p {
@@ -186,17 +186,18 @@ body {
 #checkout-frm {
   width: 60%;
   margin: 0 auto;
-  padding-bottom: 14rem;
+  padding-bottom: 8rem;
 
-  .twillio-frm {
+  .twilio-frm {
     background-color: $primary-color;
-    padding: 1.5rem 2rem;
-    border-radius: 1rem;
+    padding: 1.5rem 4rem;
+    border-radius: 3rem;
 
   }
 
   .btn {
-    padding: 0rem 2rem;
+    padding: 0rem 3rem;
+    margin-left: 1rem;
   }
 }
 
@@ -312,10 +313,13 @@ body {
 
 /* ORDER 
 | ==================================================================================== */
+
+
 #order {
   background-color: #eef0f8;
   margin-top: 4rem;
   padding: 3rem 0rem;
+
 
   .container {
     padding: 0 0;
@@ -332,15 +336,15 @@ body {
   }
 
 }
-    .card-img-top {
-      width: auto;
-      height: 10rem;
+  .card-img-top {
+    width: auto;
+    height: 10rem;
 
-      img {
-        width: auto;
-        height: auto;
-      }
+    img {
+      width: auto;
+      height: auto;
     }
+  }
 
 
 /* SLIDER
@@ -366,6 +370,7 @@ body {
     margin-bottom: 2rem;
     line-height: 5rem;
   }
+
   p {
     color: $white-text;
   }
@@ -380,6 +385,7 @@ body {
     position: absolute;
     left: 0;
   }
+
 }
   
   .carousel-item {
@@ -389,4 +395,27 @@ body {
 
 .carousel-inner>.item {
     transition: transform 0.2s ease-in-out !important;
+}
+
+
+/* SLIDER
+| ==================================================================================== */
+.modal {
+  text-align: center;
+
+  i {
+    padding-top: 2rem;
+    font-size: 4rem;
+    color: #0cd1a0;
+  }
+
+  p {
+    color: #5c648b;
+    padding: 0.8rem 2rem 0rem 2rem;
+  }
+
+  .close-btn {
+    padding: 1rem 3rem;
+    margin: 0 auto;
+  }
 }

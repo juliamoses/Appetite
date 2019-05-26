@@ -6,11 +6,6 @@ $primary-color: #212a49;
 $secondary-color: #21e7b6;
 $white-text: #fff;
 
-    // //MIXINS
-    // @mixin flex-align {
-    //   display: flex; 
-    //   align-items: center;
-    // }
     .user-info {
       position: fixed;
       color: $white-text;
@@ -28,7 +23,6 @@ $white-text: #fff;
       }
 
       p {
-        padding-top: 0.4rem;
         font-size: 0.8rem;
       }
       
@@ -59,41 +53,38 @@ $white-text: #fff;
     }
     
     .logo {
-  font-size: 1.8rem;
-  color: $white-text;
+      font-size: 1.8rem;
+      color: $white-text;
   }
 
-  a {
-    color: $white-text;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    padding: 0 0;
-  }
+    a {
+      color: $white-text;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      padding: 0 0;
+    }
 
-  a:hover {
-    border-bottom: 2px solid #21e7b6;
-  }
+    a:hover {
+      border-bottom: 2px solid #21e7b6;
+    }
 
-  .checkout-btn {
-    padding: 1em 2rem;
+    .checkout-btn {
+      padding: 1em 2rem;
 
-      &:hover {
-        border: none;
-      }
+        &:hover {
+          border: none;
+        }
 
-      &:focus {
-        outline: none;
-      }
-  }
-
-
-
+        &:focus {
+          outline: none;
+        }
+    }
 }
-
 
 .shopping-cart{
   position: relative;
+  
   
   .fa-shopping-cart {
     font-size: 2.8rem;
@@ -102,13 +93,13 @@ $white-text: #fff;
   }
   .counter {
     position: absolute;
-    top: 30%;
+    top: 25%;
     left: 60%;
-
+    font-size: 1rem;
     color: $white-text;
     background-color: $secondary-color;
     border-radius: 50rem;
-    padding: 0.2rem 0.6rem;
+    padding: 0.1rem 0.8rem;
   }
 
   a:hover {
