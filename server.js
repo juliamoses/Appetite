@@ -175,15 +175,7 @@ app.post("/register", (req, res) => {
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
 
-  knex.select("email")
-  .from("users_db")
-  .where("email", email)
-  .andWhere("password", password)
-  .then( (userEmail) => {
-    if (userEmail) {
-      bcrypt.compareSync(password, usersDatabase[user].password)){
-    }
-  res.redirect("/login");
+
 });
 
 
