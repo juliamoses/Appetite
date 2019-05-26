@@ -30,6 +30,7 @@ $white-text: #fff;
         color: $secondary-color;
       }
 
+
       .log-msg {
         color: #6f88e0;
         font-weight: 500;
@@ -47,6 +48,7 @@ $white-text: #fff;
     padding: 4rem 6rem 1.2rem 6rem;
     font-family: 'Montserrat', sans-serif;
     
+  
 
     .shopping-cart {
       transition: transform 0.2s ease-in;
@@ -58,11 +60,17 @@ $white-text: #fff;
     .nav-links {
       margin-left: 20rem;
     }
-    
+
+    .app-logo:hover {
+      text-decoration: none;
+      border: none;
+    }
+
     .logo {
       font-size: 1.8rem;
       color: $white-text;
-  }
+    }
+
 
     a {
       color: $white-text;
