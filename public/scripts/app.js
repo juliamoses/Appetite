@@ -58,8 +58,8 @@ const cartItems = () => {
   for (items in parsedItems) {
       sum += parsedItems[items].price/100;
   }
-  console.log($('#total'))
-  $('.total').text(`YOUR TOTAL: $`sum);
+    
+  $('.total').text(`YOUR TOTAL: ${sum}`);
 
   console.log("sum: ", sum);
 }
