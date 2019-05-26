@@ -10,6 +10,7 @@ const bodyParser  = require("body-parser");
 const sass        = require("node-sass-middleware");
 const app         = express();
 const cookieSession     = require('express-session');
+const bcrypt     = require("bcryptjs");
 
 
 const knexConfig  = require("./knexfile");
@@ -144,26 +145,27 @@ app.post("/checkout", (req, res) => {
 //Register new users
 app.post("/register", (req, res) => {
   const { email, password } = req.body;
-
+  const hashedPassword = bcrypt.hashSync(password, 12);
+  
   //check if email exists in DB
   knex.select("email")
   .from("users_db")
   .where("email", email)
-  .andWhere("password", password)
+  .andWhere("password", hashedPassword)
   .then( (userEmail) => {
-      if (userEmail.length === 0) {
-          return knex('users_db')
-            .returning('id')
-            .insert([{
-              email,
-              password
-            }])
-            .then((newUserId) => {
-              res.redirect("/");
-              console.log('inserted user', newUserId);
-            });
-      }
-  res.status(403).send('Email already exists');
+    if (userEmail.length === 0) {
+      return knex('users_db')
+      .returning('id')
+      .insert([{
+        email,
+        password: hashedPassword
+      }])
+      .then((user) => {
+        res.redirect("/");
+      });
+    }
+    
+    res.status(403).send('Email already exists');
   return;
 });
 
