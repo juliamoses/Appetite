@@ -48,6 +48,13 @@ $white-text: #fff;
     font-family: 'Montserrat', sans-serif;
     
 
+    .shopping-cart {
+      transition: transform 0.2s ease-in;
+    }
+    .shopping-cart:hover {
+      transform: translate(1rem, 0);
+    }
+
     .nav-links {
       margin-left: 20rem;
     }

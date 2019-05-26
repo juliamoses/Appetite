@@ -102,7 +102,19 @@ body {
     h2 {
       margin-bottom: 2rem;
     } 
+    .total {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+    i {
+      font-size: 1.2rem;
+    }
 
+    i:hover {
+      color: #0cd1a0;
+      cursor: pointer;
+    }
 }
 
 .img-wrap {

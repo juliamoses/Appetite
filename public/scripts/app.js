@@ -92,6 +92,5 @@ $('.fa-times').on('click', function (e) {
 });
 
 
-
 });
 

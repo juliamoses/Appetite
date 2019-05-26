@@ -56,10 +56,14 @@ footer {
     }
     i {
       font-size: 1.5rem;
+      padding-right: 2rem;
+      transition: transform 0.2s ease-in;
     }
     
     i:hover {
       color: $secondary-color;
+      transform: translateY(-2px);
+      transform: scale(1.2);
     }
   }
 
