@@ -18,7 +18,7 @@ $(document).ready(function(){
 
   //after checking out, closing Modal will redirect
   $('.close-btn').on('click', event => {
-    window.location.href = "/";
+    window.location.href = "/order";
   })
   
 //adds count of items added to cart
