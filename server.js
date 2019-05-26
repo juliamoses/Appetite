@@ -29,20 +29,6 @@ const accountSid = 'AC55535e36229687b8c837b28720d4ff35';
 const authToken = '6f744798e7d9ab0380a556356c3081a8';
 const client = require('twilio')(accountSid, authToken);
 
-// FAKE DB //
-const usersDatabase = {
-  "Daniel": {
-    id: "Daniel1",
-    email: "user@example.com",
-    password: "pu"
-  },
-  "Daniel2": {
-    id: "Daniel2",
-    email: "user@example.com",
-    password: "pu"
-  }
-}
-
 
 /////////APP.USE///////////////////////////
 
