@@ -29,7 +29,6 @@ const createItemElement = (item) => {
     <img class="card-img-top" src="${item.image_url}" alt="Card image cap">
     <div class="card-body">
       <h5 class="">${item.name}</h5>
-      <p class="card-text">Short desc of items</p>
       <p class="prices">$${(item.price/100).toFixed(2)}</p>
       <button id="${item.id}" class="btn btn-primary btn-lg add-cart" type="submit">Add to Cart</button>
     </div>
