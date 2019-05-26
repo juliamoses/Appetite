@@ -122,9 +122,23 @@ const cartItems = () => {
     let $cartItem = cartItemElements(items);
       $('.checkout-row').append($cartItem);
     }
+
+
+  let sum = 0;
+  for (items in parsedItems) {
+      sum += parsedItems[items].price/100;
   }
 
+  $('#count').empty();
+  $('#count').append(sum);
+  console.log("sum: ", sum);
+}
+
+
+
 cartItems();
+
+
 
 
 //to delete item from cart
@@ -138,10 +152,13 @@ $('.fa-times').on('click', function (e) {
       cart.splice(i, 1);
     }
   }
-   console.log(cart.length)
+
+  console.log(cart.length)
   localStorage.setItem('foodCart', JSON.stringify(cart));
   $('.counter').text(cart.length);
   $('.checkout-row').empty();
+  window.localStorage.removeItem('foodCart');
+    // console.log(cart.length)
   cartItems();
   // window.location.reload();
 });
