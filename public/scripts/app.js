@@ -12,10 +12,14 @@ $(document).ready(function(){
       type: "post",
     })
     .done(function (){
-      localStorage.removeItem('foodCart');
-      window.location.href = "/";
-      })
+    })
   });
+  
+  //after checking out, closing Modal will redirect
+  $('.close-btn').on('click', event => {
+  localStorage.removeItem('foodCart');
+  window.location.href = "/order";
+})
 
 //adds count of items added to cart
 //when you click checkout make sure to clear localStorage
