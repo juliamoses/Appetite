@@ -26,8 +26,27 @@
       
       </div>
 
-        </div>
-    </section>   
+    </div>
+  </section> 
+
+  <% if(!user){ %>
+      <!-- Error Handling Modal -->
+      <div class="modal fade" id="cartError" tabindex="-1" role="dialog" aria-labelledby="cartError" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <p><i class="fas fa-error"></i></p>
+                  <h2 class="modal-title"> Please Register or Login</h2>
+                  <p>You're almost ready to order. Please <a href="/login">Login</a> or <a href="/register">Register</a> before ordering.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>  
+    <% }; %>      
+
     <% include partials/_footer %>
   </body>
 </html>

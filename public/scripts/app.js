@@ -15,10 +15,12 @@ $(document).ready(function(){
       localStorage.removeItem('foodCart');
     })
   });
-  
+
+  //after checking out, closing Modal will redirect
   $('.close-btn').on('click', event => {
     window.location.href = "/";
   })
+  
 //adds count of items added to cart
 //when you click checkout make sure to clear localStorage
 // ok
@@ -51,7 +53,7 @@ const createItemElement = (item) => {
     <div class="card-body">
       <h5 class="">${item.name}</h5>
       <p class="prices">$${(item.price/100).toFixed(2)}</p>
-      <button id="${item.id}" class="btn btn-primary btn-lg add-cart" type="submit">Add to Cart</button>
+      <button id="${item.id}" class="btn btn-primary btn-lg add-cart" type="submit" data-toggle="modal" data-target="#cartError">Add to Cart</button>
     </div>
   </div>
   `
@@ -83,7 +85,6 @@ const renderMenuItems = (items) => {
     //pushes items to hidden form field
     let cartForm = JSON.parse(localStorage.getItem('foodCart'));
     cartForm.push(temp);
-    console.log('food cart:', cartForm);
     var fd = new FormData(document.getElementById("orderArr"));
     for (var i = 0; i < cartForm.length; i++) {
     fd.append('cartForm[]', cartForm[i]);
