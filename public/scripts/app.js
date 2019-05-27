@@ -2,36 +2,36 @@
 $(document).ready(function(){
 
 
-  $('.twilio-frm').on('submit', event => {
-    event.preventDefault();
-    let data = $('.twilio-frm').serializeArray();
-    data.push({name: 'cartItems', value: localStorage.getItem('foodCart')});
-    $.ajax({
-      data: $.param(data),// add items in cart, name, and phonenumber
-      url: "/checkout",
-      type: "post",
-    })
-    .done(function (){
-    })
-  });
+$('.twilio-frm').on('submit', event => {
+  event.preventDefault();
+  let data = $('.twilio-frm').serializeArray();
+  data.push({name: 'cartItems', value: localStorage.getItem('foodCart')});
+  $.ajax({
+    data: $.param(data),// add items in cart, name, and phonenumber
+    url: "/checkout",
+    type: "post",
+  })
+  .done(function (){
+  })
+});
+
   
-  //after checking out, closing Modal will redirect
-  $('.close-btn').on('click', event => {
+//after checking out, closing Modal will redirect
+$('.close-btn').on('click', event => {
   localStorage.removeItem('foodCart');
   window.location.href = "/order";
 })
 
-//adds count of items added to cart
-//when you click checkout make sure to clear localStorage
 
 if (!localStorage.getItem('foodCart')) {
   localStorage.setItem('foodCart', JSON.stringify([]))
 }
 
+
 $('.counter').text(JSON.parse(localStorage.getItem('foodCart')).length)
 
 
-const cartItemElements = (items) => {
+function cartItemElements(items) {
   return ` <div class='row'>
             <div class='item-content'>
               <p class='item-name'>${items.name}</p>
@@ -42,6 +42,7 @@ const cartItemElements = (items) => {
             </div>
           </div>`
 }
+
 
 //to render only item price and name
 const cartItems = () => {
