@@ -1,29 +1,60 @@
-# Node Skeleton
+# Appetite
 
-## Project Setup
+## About the Project
+Appetite is a full stack web application built with Node.js, Express, AJAX, Twilio API, jQuery, HTML5, CSS3, PosgreSQL and local storage.
 
-1. Create your own empty repo on GitHub
-2. Clone this repository (do not fork)
-  - Suggestion: When cloning, specify a different folder name that is relevant to your project
-3. Remove the git remote: `git remote rm origin`
-4. Add a remote for your origin: `git remote add origin <your github repo URL>`
-5. Push to the new origin: `git push -u origin master`
-6. Verify that the skeleton code now shows up in your repo on GitHub
+### Problem Statement
+An application built to simplify online food ordering for pickup.
+
+### Expected Usage
+Desired users are restaurant owners and customers:
+
+- Restaurant owners will recieve a SMS when an order is placed.
+
+	- The owners can send a SMS with estimated preparation time to notify customers.
+	- The owners can check the informtation and status of each order.
+
+- Customers can order from the restaurant menu online.
+
+	- They will be notified when the order has been accepted and how long it will take.
+	- They will be notified when the order is ready for pickup.
+
 
 ## Getting Started
+Install all dependencies using the npm install command.
 
-1. Create the `.env` by using `.env.example` as a reference: `cp .env.example .env`
-2. Update the .env file with your correct local information
-3. Install dependencies: `npm i`
-4. Fix to binaries for sass: `npm rebuild node-sass`
-5. Run migrations: `npm run knex migrate:latest`
-  - Check the migrations folder to see what gets created in the DB
-6. Run the seed: `npm run knex seed:run`
-  - Check the seeds file to see what gets seeded in the DB
-7. Run the server: `npm run local`
-8. Visit `http://localhost:8080/`
+Setup the database:
+
+	- Run knex migrate:latest in your terminal.
+	- Optional: Set up dummy-data by running knex seed:run in your terminal.
+	- Run the development web server using the 'npm start' command.
+
+Setup twilio
+
+	- Sign up in twilio to require authorization tokens and account sid.
+	- Use twilio to send and receive message.
+
 
 ## Dependencies
 
 - Node 5.10.x or above
 - NPM 3.8.x or above
+- Body Parser
+- EJS
+- Express
+- Knex
+- Postgre SQL
+- Twilio (API)
+
+
+!["Appetite Home Page"]()
+!["Appetite Menu Page"]()
+!["Appetite Checkout"]()
+!["Appetite Map"]()
+
+
+
+
+
+
+
