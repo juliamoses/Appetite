@@ -47,10 +47,10 @@ Setup twilio
 - Twilio (API)
 
 
-!["Appetite Home Page"](https://github.com/DTran23/food-order-app/blob/feature/readme/docs/appetite-home.png)
-!["Appetite Menu Page"](https://github.com/DTran23/food-order-app/blob/feature/readme/docs/appetite-menu.png)
-!["Appetite Checkout"](https://github.com/DTran23/food-order-app/blob/feature/readme/docs/appetite-cart.png)
-!["Appetite Map"](https://github.com/DTran23/food-order-app/blob/feature/readme/docs/appetite-map.png)
+!["Appetite Home Page"](https://github.com/juliamoses/Appetite/blob/master/docs/appetite-home.png?raw=true)
+!["Appetite Menu Page"](https://github.com/juliamoses/Appetite/blob/master/docs/appetite-menu.png?raw=true)
+!["Appetite Checkout"](https://github.com/juliamoses/Appetite/blob/master/docs/appetite-cart.png?raw=true)
+!["Appetite Map"](https://github.com/juliamoses/Appetite/blob/master/docs/appetite-map.png?raw=true)
 
 
 
