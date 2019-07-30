@@ -3,6 +3,11 @@
 ## About the Project
 Appetite is a full stack web application built with Node.js, Express, AJAX, Twilio API, jQuery, HTML5, CSS3, PosgreSQL and local storage.
 
+## Team Members
+- [Julia Moses](https://github.com/juliamoses)
+- [Brian Murray](https://github.com/brianeshores)
+- [Daniel Tran](https://github.com/DTran23/Appetite)
+
 ### Problem Statement
 An application built to simplify online food ordering for pickup.
 
@@ -51,7 +56,6 @@ Setup twilio
 !["Appetite Menu Page"](https://github.com/juliamoses/Appetite/blob/master/docs/appetite-menu.png?raw=true)
 !["Appetite Checkout"](https://github.com/juliamoses/Appetite/blob/master/docs/appetite-cart.png?raw=true)
 !["Appetite Map"](https://github.com/juliamoses/Appetite/blob/master/docs/appetite-map.png?raw=true)
-
 
 
 
